@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empire Pizza · kiosk style</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Font: custom blend -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0e0b0b;
+      background-image: radial-gradient(circle at 25% 0%, #2f1c12 0%, #0a0706 100%);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      color: #f5efe9;
+    }
+
+    /* main kiosk panel – dark metallic, tactile */
+    .kiosk {
+      max-width: 1400px;
+      width: 100%;
+      background: #1e1613;
+      background: linear-gradient(145deg, #231b17 0%, #19110e 100%);
+      border-radius: 3.5rem 3.5rem 2.5rem 2.5rem;
+      box-shadow: 
+        0 30px 50px rgba(0,0,0,0.9),
+        inset 0 2px 3px rgba(255, 215, 175, 0.15),
+        inset 0 -4px 6px rgba(0,0,0,0.7);
+      border: 1px solid #55433b;
+      padding: 2rem 2.2rem;
+      transition: all 0.2s ease;
+    }
+
+    /* kiosk screen inner */
+    .kiosk-screen {
+      background: #130e0c;
+      border-radius: 2rem 2rem 1.8rem 1.8rem;
+      padding: 1.8rem 2rem;
+      box-shadow: inset 0 0 15px #050302, 0 10px 20px rgba(0,0,0,0.6);
+      border: 1px solid #4f3b32;
+    }
+
+    /* header like kiosk top bar */
+    .kiosk-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 2px solid #b1542b;
+      border-image: linear-gradient(90deg, #c45f32, #e3a13f, #c45f32) 1;
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      font-family: 'Archivo Black', sans-serif;
+    }
+
+    .brand-icon {
+      font-size: 2.8rem;
+      color: #f5b557;
+      filter: drop-shadow(0 0 6px #ffb76e);
+    }
+
+    .brand-name {
+      font-size: 2.6rem;
+      letter-spacing: 3px;
+      background: linear-gradient(135deg, #fcd7a8, #f8b27a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-transform: uppercase;
+      margin-left: 6px;
+    }
+
+    .brand-name span {
+      font-size: 1.2rem;
+      background: none;
+      color: #b7a69b;
+      margin-left: 8px;
+      letter-spacing: 1px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      text-transform: none;
+    }
+
+    .kiosk-order-tag {
+      background: #2f201a;
+      border-radius: 60px;
+      padding: 0.8rem 1.5rem;
+      border: 1px solid #b96737;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      box-shadow: inset 0 1px 4px #ffcf8a40, 0 5px 0 #0f0805;
+    }
+
+    .kiosk-order-tag i {
+      color: #fea45b;
+      font-size: 1.5rem;
+    }
+
+    /* location strip */
+    .info-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem 3rem;
+      background: #2c1d16b0;
+      backdrop-filter: blur(3px);
+      border-radius: 4rem;
+      padding: 0.8rem 2rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid #b77141a0;
+      font-weight: 500;
+      justify-content: center;
+    }
+
+    .info-strip i {
+      color: #faa75e;
+      width: 26px;
+    }
+
+    .info-strip .phone a {
+      color: #f5efe9;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .info-strip .phone a:hover {
+      color: #fcc58b;
+    }
+
+    /* menu grid – unique kiosk tiles */
+    .pizza-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin: 2.5rem 0 2rem;
+    }
+
+    /* pizza card – glossy, bold, industrial */
+    .pizza-card {
+      background: #2a1e18;
+      background: linear-gradient(165deg, #281e1a, #1f1511);
+      border-radius: 2.2rem;
+      padding: 1.5rem 1.2rem 1.8rem;
+      border: 1px solid #8a5b44;
+      box-shadow: 0 12px 0 #0e0907, 0 8px 20px black;
+      transition: all 0.1s cubic-bezier(0.2, 1.6, 0.5, 1);
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .pizza-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 17px 0 #0e0907, 0 15px 30px #000;
+      border-color: #d68d5c;
+    }
+
+    .pizza-card:active {
+      transform: translateY(4px);
+      box-shadow: 0 6px 0 #0e0907, 0 8px 15px black;
+    }
+
+    /* illustrative pizza images (stylish "from yourself" placeholders) */
+    .pizza-img {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1rem;
+      background: #392e28;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      filter: drop-shadow(0 12px 10px #140e0b);
+      border: 3px solid #b68156;
+      box-shadow: inset 0 -5px 8px #1a120e;
+      background: radial-gradient(circle at 30% 30%, #594538, #2f201a);
+      transition: 0.25s;
+    }
+
+    .pizza-card:hover .pizza-img {
+      border-color: #f7c690;
+      transform: scale(1.02) rotate(2deg);
+    }
+
+    .pizza-img i, .pizza-img .fa-stack {
+      font-size: 4rem;
+      color: #facc9f;
+      text-shadow: 0 4px 0 #7b4d31;
+    }
+    /* custom icon arrangement for variety */
+    .topping-dots {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 6px;
+    }
+    .topping-dots span {
+      width: 12px;
+      height: 12px;
+      background: #edb17c;
+      border-radius: 50%;
+      box-shadow: 0 2px 0 #854f2c;
+    }
+    .topping-dots span.green { background: #86b486; }
+    .topping-dots span.brown { background: #b57a50; }
+
+    .pizza-name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      font-family: 'Archivo Black', sans-serif;
+      text-transform: uppercase;
+      color: #fbd6af;
+      line-height: 1.2;
+    }
+    .pizza-desc {
+      font-size: 0.95rem;
+      color: #bcaa9b;
+      margin: 0.5rem 0 0.8rem;
+    }
+    .price {
+      font-size: 2rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: #fed99b;
+      background: #352419;
+      border-radius: 40px;
+      padding: 0.3rem 0.8rem;
+      width: fit-content;
+      margin: 0.6rem auto 0;
+      border: 1px solid #bc7f58;
+    }
+    .price small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #cfa77d;
+    }
+
+    /* order bar (kiosk bottom) */
+    .order-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-top: 2.2rem;
+      padding-top: 1.2rem;
+      border-top: 2px dashed #bd632f;
+    }
+
+    .total-panel {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: #1f1510;
+      padding: 0.8rem 2rem;
+      border-radius: 4rem;
+      border: 1px solid #b16f44;
+    }
+    .total-label {
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #ba8f72;
+    }
+    .total-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffeac1, #ffbe85);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .kiosk-cta {
+      background: #d56f30;
+      border: none;
+      color: #1f120b;
+      font-weight: 800;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      padding: 1rem 3rem;
+      border-radius: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 12px 0 #6f381b, 0 5px 30px #ffa5584d;
+      transition: 0.07s linear;
+      border: 1px solid #ffb47b;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    .kiosk-cta:active {
+      transform: translateY(7px);
+      box-shadow: 0 5px 0 #6f381b, 0 8px 20px #f77d2e;
+    }
+
+    .kiosk-cta i {
+      font-size: 2rem;
+      color: #2d170b;
+    }
+
+    .fine-print {
+      margin-top: 1.2rem;
+      text-align: right;
+      color: #7a624f;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .fine-print i {
+      color: #b67548;
+    }
+
+    /* selected state simulation (just for design) */
+    .badge-new {
+      position: absolute;
+      top: -10px;
+      right: -5px;
+      background: #df801d;
+      color: #0f0703;
+      font-weight: 800;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      border: 2px solid #ffc891;
+      box-shadow: 0 4px 0 #753f10;
+      text-transform: uppercase;
+    }
+
+    /* mobile love */
+    @media (max-width: 650px) {
+      .kiosk { padding: 1rem; }
+      .kiosk-screen { padding: 1rem; }
+      .brand-name { font-size: 1.8rem; }
+      .info-strip { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+      .order-actions { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="kiosk">
+    <div class="kiosk-screen">
+      
+      <!-- header with kiosk mood -->
+      <div class="kiosk-header">
+        <div class="brand">
+          <i class="fas fa-crown brand-icon"></i>
+          <div class="brand-name">EMPIRE PIZZA <span>· kiosk</span></div>
+        </div>
+        <div class="kiosk-order-tag">
+          <i class="fas fa-receipt"></i>
+          <span>ORDER #4281</span>
+          <i class="fas fa-chevron-down" style="font-size: 1rem;"></i>
+        </div>
+      </div>
+
+      <!-- address & phone (exact given) -->
+      <div class="info-strip">
+        <div><i class="fas fa-map-pin"></i> 150 Broad St, New London, CT 06320</div>
+        <div class="phone"><i class="fas fa-phone-alt"></i> <a href="tel:+18604403999">(860) 440-3999</a></div>
+        <div><i class="fas fa-clock"></i> open · till 11pm</div>
+      </div>
+
+      <!-- PIZZA GRID – all types, unique images (you can change later) -->
+      <div class="pizza-showcase">
+        
+        <!-- classic pepperoni -->
+        <div class="pizza-card">
+          <div class="badge-new">🔥 TOP</div>
+          <div class="pizza-img">
+            <span class="fa-stack">
+              <i class="fas fa-circle fa-stack-2x" style="color:#b5531d;"></i>
+              <i class="fas fa-pizza-slice fa-stack-1x fa-inverse" style="transform: scale(1.2);"></i>
+            </span>
+          </div>
+          <div class="pizza-name">EMPIRE PEP</div>
+          <div class="pizza-desc">double pepperoni, hot honey</div>
+          <div class="topping-dots"><span></span><span class="brown"></span><span></span><span class="green"></span></div>
+          <div class="price"><small>$</small>18<small>.99</small></div>
+        </div>
+
+        <!-- Margherita regina -->
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <i class="fas fa-leaf" style="color: #b3d9a0; background: #3e3027; padding: 1rem; border-radius: 50%;"></i>
+          </div>
+          <div class="pizza-name">REGINA MARGH</div>
+          <div class="pizza-desc">fior di latte, basil, evo</div>
+          <div class="topping-dots"><span class="green"></span><span></span><span class="green"></span></div>
+          <div class="price"><small>$</small>16<small>.50</small></div>
+        </div>
+
+        <!-- spicy diavola -->
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <i class="fas fa-pepper-hot" style="color: #e6784b; font-size: 3.5rem;"></i>
+          </div>
+          <div class="pizza-name">DIAVOLA</div>
+          <div class="pizza-desc">spicy salami, calabrian chili</div>
+          <div class="topping-dots"><span class="brown"></span><span class="brown"></span><span style="background:#cf4f2b;"></span></div>
+          <div class="price"><small>$</small>19<small>.99</small></div>
+        </div>
+
+        <!-- mushroom truffle -->
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <i class="fas fa-mushroom" style="color: #cdb38c; display: block; font-size: 3.8rem;">🍄</i>
+          </div>
+          <div class="pizza-name">TRUFFLE ROYAL</div>
+          <div class="pizza-desc">wild mushrooms, truffle oil</div>
+          <div class="topping-dots"><span class="brown"></span><span></span><span class="brown"></span></div>
+          <div class="price"><small>$</small>22<small>.50</small></div>
+        </div>
+
+        <!-- bbq chicken -->
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <i class="fas fa-drumstick-bite" style="color: #dfa65b; font-size: 3.5rem;"></i>
+          </div>
+          <div class="pizza-name">SMOKEY BBQ</div>
+          <div class="pizza-desc">grilled chicken, red onion</div>
+          <div class="topping-dots"><span></span><span class="green"></span><span></span></div>
+          <div class="price"><small>$</small>20<small>.99</small></div>
+        </div>
+
+        <!-- four cheese -->
+        <div class="pizza-card">
+          <div class="pizza-img">
+            <i class="fas fa-cheese" style="color: #f1e1b0;"></i>
+          </div>
+          <div class="pizza-name">EMPIRE BIANCA</div>
+          <div class="pizza-desc">4 cheese, garlic, oregano</div>
+          <div class="topping-dots"><span></span><span></span><span></span></div>
+          <div class="price"><small>$</small>18<small>.50</small></div>
+        </div>
+      </div>
+
+      <!-- second row (extra variety, still within grid) – hidden via same grid, but we add 2 more to fill -->
+      <div class="pizza-showcase" style="margin-top: 0.5rem; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));">
+        <!-- meat lovers -->
+        <div class="pizza-card">
+          <div class="pizza-img"><i class="fas fa-bacon" style="font-size: 3.2rem;"></i></div>
+          <div class="pizza-name">COLOSSAL MEAT</div>
+          <div class="pizza-desc">pepperoni, sausage, bacon</div>
+          <div class="price"><small>$</small>24<small>.99</small></div>
+        </div>
+        <!-- veggie supreme -->
+        <div class="pizza-card">
+          <div class="pizza-img"><i class="fas fa-carrot" style="color: #f0a55a;"></i></div>
+          <div class="pizza-name">GARDEN EMPIRE</div>
+          <div class="pizza-desc">bell pepper, olives, spinach</div>
+          <div class="price"><small>$</small>17<small>.99</small></div>
+        </div>
+        <!-- hawaiian (unique touch) -->
+        <div class="pizza-card">
+          <div class="pizza-img"><i class="fas fa-pineapple" style="color: #f5d654;"></i></div>
+          <div class="pizza-name">GOLDEN HAWAII</div>
+          <div class="pizza-desc">pineapple, ham, jalapeño</div>
+          <div class="price"><small>$</small>18<small>.99</small></div>
+        </div>
+        <!-- pepper & onion -->
+        <div class="pizza-card">
+          <div class="pizza-img"><i class="fas fa-pepper" style="color: #83b683;"></i></div>
+          <div class="pizza-name">SICILIANO</div>
+          <div class="pizza-desc">roasted peppers, onion, olives</div>
+          <div class="price"><small>$</small>19<small>.50</small></div>
+        </div>        
+      </div>
+
+      <!-- bottom kiosk order bar — super stylish -->
+      <div class="order-actions">
+        <div class="total-panel">
+          <span class="total-label"><i class="fas fa-basket-shopping"></i> YOUR CART</span>
+          <span class="total-value">$49.47</span>
+          <span style="color: #a48062; font-size: 0.9rem;">(3 items)</span>
+        </div>
+        <button class="kiosk-cta">
+          <i class="fas fa-arrow-right-to-bracket"></i> CHECKOUT
+        </button>
+      </div>
+
+      <!-- fine print / kiosk footer -->
+      <div class="fine-print">
+        <span><i class="fa-regular fa-credit-card"></i> tap / swipe card</span>
+        <span>Empire Pizza • est. 2025 • <i class="fa-regular fa-keyboard"></i> unique kiosk style</span>
+      </div>
+
+      <!-- tiny note: all images are illustrative – you can replace later -->
+      <div style="text-align: center; margin-top: 12px; color: #5e4538; font-size: 0.75rem; border-top: 1px solid #3f2e25; padding-top: 8px;">
+        <i class="fa-regular fa-images"></i> pizza images are customizable — replace with your own photos
+      </div>
+    </div> <!-- kiosk-screen -->
+  </div> <!-- kiosk -->
+</body>
+</html>
