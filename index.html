@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Empire Pizza · full menu kiosk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Empire Pizza · mobile kiosk</title>
   <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Google Font: industrial kiosk style -->
@@ -20,41 +20,41 @@
       background-image: radial-gradient(circle at 25% 0%, #2f1c12 0%, #0a0706 100%);
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
-      padding: 1.5rem;
+      padding: 0.8rem;
       color: #f5efe9;
     }
 
     .kiosk {
-      max-width: 1500px;
+      max-width: 600px; /* mobile friendly width */
       margin: 0 auto;
       background: linear-gradient(145deg, #231b17 0%, #19110e 100%);
-      border-radius: 3.5rem 3.5rem 2.5rem 2.5rem;
-      box-shadow: 0 30px 50px rgba(0,0,0,0.9), inset 0 2px 3px rgba(255,215,175,0.15), inset 0 -4px 6px rgba(0,0,0,0.7);
+      border-radius: 2.2rem 2.2rem 1.8rem 1.8rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.9), inset 0 2px 3px rgba(255,215,175,0.15);
       border: 1px solid #55433b;
-      padding: 2rem 2.2rem;
+      padding: 1rem 1rem;
     }
 
     .kiosk-screen {
       background: #130e0c;
-      border-radius: 2rem 2rem 1.8rem 1.8rem;
-      padding: 1.8rem 2rem;
-      box-shadow: inset 0 0 15px #050302, 0 10px 20px rgba(0,0,0,0.6);
+      border-radius: 1.5rem 1.5rem 1.2rem 1.2rem;
+      padding: 1rem 1rem;
+      box-shadow: inset 0 0 15px #050302;
       border: 1px solid #4f3b32;
     }
 
-    /* header with videos */
+    /* video header */
     .video-header {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 2rem;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 1.5rem;
       overflow: hidden;
       border: 2px solid #b1542b;
     }
     .header-video {
-      flex: 1 1 250px;
-      height: 120px;
+      flex: 1 1 45%;
+      height: 90px;
       object-fit: cover;
       border-right: 1px solid #b96737;
     }
@@ -64,28 +64,26 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 2rem;
-      padding-bottom: 0.8rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
       border-bottom: 2px solid #b1542b;
-      border-image: linear-gradient(90deg, #c45f32, #e3a13f, #c45f32) 1;
     }
 
     .brand {
       display: flex;
       align-items: baseline;
-      gap: 0.4rem;
+      gap: 0.2rem;
       font-family: 'Archivo Black', sans-serif;
     }
 
     .brand-icon {
-      font-size: 2.8rem;
+      font-size: 2rem;
       color: #f5b557;
-      filter: drop-shadow(0 0 6px #ffb76e);
     }
 
     .brand-name {
-      font-size: 2.6rem;
-      letter-spacing: 3px;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
       background: linear-gradient(135deg, #fcd7a8, #f8b27a);
       -webkit-background-clip: text;
       background-clip: text;
@@ -94,131 +92,134 @@
     }
 
     .brand-name span {
-      font-size: 1.2rem;
+      font-size: 0.9rem;
       color: #b7a69b;
-      margin-left: 8px;
-      font-weight: 400;
-      text-transform: none;
+      margin-left: 5px;
     }
 
     .kiosk-order-tag {
       background: #2f201a;
-      border-radius: 60px;
-      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      padding: 0.4rem 1rem;
       border: 1px solid #b96737;
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 1.1rem;
+      gap: 8px;
+      font-size: 0.9rem;
       font-weight: 600;
-      box-shadow: inset 0 1px 4px #ffcf8a40, 0 5px 0 #0f0805;
+      box-shadow: 0 4px 0 #0f0805;
     }
 
     .info-strip {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem 3rem;
+      gap: 0.8rem;
       background: #2c1d16b0;
       backdrop-filter: blur(3px);
-      border-radius: 4rem;
-      padding: 0.8rem 2rem;
-      margin-bottom: 2.5rem;
+      border-radius: 2.5rem;
+      padding: 0.6rem 1rem;
+      margin-bottom: 1.5rem;
       border: 1px solid #b77141a0;
       font-weight: 500;
+      font-size: 0.9rem;
       justify-content: center;
     }
 
     .info-strip i {
       color: #faa75e;
-      width: 26px;
+      width: 22px;
     }
     .info-strip a {
       color: #f5efe9;
       text-decoration: none;
     }
 
-    /* category titles */
     .section-title {
-      font-size: 2.2rem;
+      font-size: 1.6rem;
       font-weight: 800;
       color: #fbc99d;
-      border-left: 8px solid #cf7940;
-      padding-left: 1.2rem;
-      margin: 2.5rem 0 1rem;
+      border-left: 6px solid #cf7940;
+      padding-left: 0.8rem;
+      margin: 1.5rem 0 0.8rem;
       text-transform: uppercase;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
-    .section-sub {
+    .section-title span {
+      font-size: 0.8rem;
       color: #bfa690;
-      margin: -0.5rem 0 1.5rem 2rem;
       font-style: italic;
     }
 
-    /* grid for items */
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.8rem;
+      grid-template-columns: 1fr; /* single column on mobile */
+      gap: 1.2rem;
     }
 
     .item-card {
       background: linear-gradient(165deg, #281e1a, #1f1511);
-      border-radius: 2.2rem;
-      padding: 1.5rem 1.2rem 1.8rem;
+      border-radius: 1.8rem;
+      padding: 1rem 1rem;
       border: 1px solid #8a5b44;
-      box-shadow: 0 12px 0 #0e0907, 0 8px 20px black;
+      box-shadow: 0 8px 0 #0e0907, 0 5px 15px black;
       transition: 0.1s;
-      text-align: center;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
     .item-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
       border-color: #d68d5c;
-      box-shadow: 0 17px 0 #0e0907, 0 15px 30px #000;
+      box-shadow: 0 11px 0 #0e0907;
     }
 
     .item-img {
-      width: 140px;
-      height: 140px;
-      margin: 0 auto 1rem;
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
       border-radius: 50%;
       background-size: cover;
       background-position: center;
-      border: 3px solid #b68156;
-      box-shadow: inset 0 -5px 8px #1a120e, 0 12px 10px #140e0b;
+      border: 2px solid #b68156;
+      box-shadow: 0 6px 0 #1a120e;
+    }
+
+    .item-info {
+      flex: 1;
+      text-align: left;
     }
 
     .item-name {
-      font-size: 1.7rem;
+      font-size: 1.3rem;
       font-weight: 700;
       font-family: 'Archivo Black', sans-serif;
       color: #fbd6af;
       line-height: 1.2;
     }
     .item-desc {
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       color: #bcaa9b;
-      margin: 0.3rem 0 0.5rem;
+      margin: 0.2rem 0 0.3rem;
     }
-    .price-tag {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #fed99b;
-      background: #352419;
-      border-radius: 40px;
-      padding: 0.2rem 1rem;
-      display: inline-block;
-      margin: 0.3rem;
-      border: 1px solid #bc7f58;
-    }
-    .size-row {
+    .price-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
-      justify-content: center;
-      margin-top: 0.5rem;
+      gap: 0.3rem 0.5rem;
+      margin-top: 0.3rem;
+    }
+    .price-tag {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fed99b;
+      background: #352419;
+      border-radius: 30px;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid #bc7f58;
+      white-space: nowrap;
     }
 
     .order-actions {
@@ -226,22 +227,23 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      margin-top: 2.5rem;
-      padding-top: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
       border-top: 2px dashed #bd632f;
+      gap: 0.8rem;
     }
 
     .total-panel {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 0.8rem;
       background: #1f1510;
-      padding: 0.8rem 2rem;
-      border-radius: 4rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 3rem;
       border: 1px solid #b16f44;
     }
     .total-value {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       font-weight: 800;
       background: linear-gradient(135deg, #ffeac1, #ffbe85);
       -webkit-background-clip: text;
@@ -254,21 +256,22 @@
       border: none;
       color: #1f120b;
       font-weight: 800;
-      font-size: 1.5rem;
-      padding: 1rem 3rem;
+      font-size: 1.2rem;
+      padding: 0.7rem 1.8rem;
       border-radius: 3rem;
       display: flex;
       align-items: center;
-      gap: 12px;
-      box-shadow: 0 12px 0 #6f381b;
+      gap: 8px;
+      box-shadow: 0 8px 0 #6f381b;
       cursor: pointer;
       border: 1px solid #ffb47b;
     }
     .kiosk-cta:active {
-      transform: translateY(7px);
-      box-shadow: 0 5px 0 #6f381b;
+      transform: translateY(5px);
+      box-shadow: 0 3px 0 #6f381b;
     }
-    /* image classes using provided filenames (lowercase, hyphenated) */
+
+    /* all image classes using the provided filenames (lowercase, hyphenated) */
     .img-cheese-pizza { background-image: url('cheese-pizza.jpg'); }
     .img-gluten-free-pizza { background-image: url('gluten-free-pizza.jpg'); }
     .img-margherita-pizza { background-image: url('margherita-pizza.jpg'); }
@@ -300,6 +303,79 @@
     .img-sides { background-image: url('sides.jpg'); }
     .img-beverages { background-image: url('beverages.jpg'); }
     .img-catering { background-image: url('catering.jpg'); }
+    .img-antipasto-salad { background-image: url('antipasto-salad.jpg'); }
+    .img-b-l-t-wrap { background-image: url('b-l-t-wrap.jpg'); }
+    .img-baked-ziti-catering { background-image: url('baked-ziti-catering.jpg'); }
+    .img-bbq-chicken-wrap { background-image: url('bbq-chicken-wrap.jpg'); }
+    .img-bowl-of-chili { background-image: url('bowl-of-chili.jpg'); }
+    .img-broccoli-cheddar-bites { background-image: url('broccoli-cheddar-bites.jpg'); }
+    .img-buffalo-wings-catering { background-image: url('buffalo-wings-catering.jpg'); }
+    .img-caesar-salad-w-tuna { background-image: url('caesar-salad-w-tuna.jpg'); }
+    .img-caesar-salad { background-image: url('caesar-salad.jpg'); }
+    .img-calamari-dinner { background-image: url('calamari-dinner.jpg'); }
+    .img-cheese-n-chicken-cutlet-wrap { background-image: url('cheese-n-chicken-cutlet-wrap.jpg'); }
+    .img-cheese-n-chicken-wrap { background-image: url('cheese-n-chicken-wrap.jpg'); }
+    .img-cheeseburger { background-image: url('cheeseburger.jpg'); }
+    .img-chicken-caesar-salad-wrap { background-image: url('chicken-caesar-salad-wrap.jpg'); }
+    .img-chicken-tenders-2-pcs-w-fries { background-image: url('chicken-tenders - -2-pcs-w-fries.jpg'); }
+    .img-chicken-tenders-dinner-4-pcs { background-image: url('chicken-tenders-dinner - -4-pcs.jpg'); }
+    .img-chili-cheese-fries { background-image: url('chili-cheese-fries.jpg'); }
+    .img-chili-dog { background-image: url('chili-dog.jpg'); }
+    .img-clam-strips-dinner { background-image: url('clam-strips-dinner.jpg'); }
+    .img-clam-strips-roll { background-image: url('clam-strips-roll.jpg'); }
+    .img-crispy-chicken-salad { background-image: url('crispy-chicken-salad.jpg'); }
+    .img-crispy-chicken-swch { background-image: url('crispy-chicken-swch.jpg'); }
+    .img-fish-dinner-3-pcs { background-image: url('fish-dinner - -3-pcs.jpg'); }
+    .img-fish-wrap { background-image: url('fish-wrap.jpg'); }
+    .img-flounder-fish-swch { background-image: url('flounder-fish-swch-fresh-flounder-w-lettuce-and-to.jpg'); }
+    .img-french-fries-lrg { background-image: url('french-fries - -lrg.jpg'); }
+    .img-french-fries-sml { background-image: url('french-fries - -sml.jpg'); }
+    .img-fried-dough { background-image: url('fried-dough.jpg'); }
+    .img-fried-pickles { background-image: url('fried-pickles.jpg'); }
+    .img-garden-salad-w-tuna { background-image: url('garden-salad-w-tuna.jpg'); }
+    .img-garden-salad { background-image: url('garden-salad.jpg'); }
+    .img-garlic-knots { background-image: url('garlic-knots - -2-pcs.jpg'); }
+    .img-genoa-wrap { background-image: url('genoa-wrap.jpg'); }
+    .img-genoa-wrap-1 { background-image: url('genoa-wrap (1).jpg'); } /* fallback */
+    .img-grilled-cheese-swch { background-image: url('grilled-cheese-swch.jpg'); }
+    .img-grilled-chicken-salad { background-image: url('grilled-chicken-salad.jpg'); }
+    .img-grilled-chicken-swch { background-image: url('grilled-chicken-swch.jpg'); }
+    .img-ham-wrap { background-image: url('ham-wrap.jpg'); }
+    .img-homemade-chips { background-image: url('homemade-chips.jpg'); }
+    .img-jalapeno-poppers { background-image: url('jalapeno-poppers.jpg'); }
+    .img-long-dog { background-image: url('long-dog.jpg'); }
+    .img-mozzarella-sticks { background-image: url('mozzarella-sticks - -6-pcs.jpg'); }
+    .img-new-england-clam-chowder { background-image: url('new-england-clam-chowder-soup-bowl.jpg'); }
+    .img-onion-rings { background-image: url('onion-rings.jpg'); }
+    .img-pasta-w-chx-alfredo-catering { background-image: url('pasta-w-chx-alfredo-catering.jpg'); }
+    .img-pasta-w-chx-parm-catering { background-image: url('pasta-w-chx-parm-catering.jpg'); }
+    .img-pasta-w-eggplant-parm-catering { background-image: url('pasta-w-eggplant-parm-catering.jpg'); }
+    .img-pasta-w-meatballs-catering { background-image: url('pasta-w-meatballs-catering.jpg'); }
+    .img-pesto-grilled-chicken-wrap { background-image: url('pesto-grilled-chicken-wrap.jpg'); }
+    .img-potato-salad { background-image: url('potato-salad.jpg'); }
+    .img-salad-catering { background-image: url('salad-catering.jpg'); }
+    .img-sausage-peppers-onions-catering { background-image: url('sausage-peppers-onions-catering.jpg'); }
+    .img-scallop-dinner { background-image: url('scallop-dinner.jpg'); }
+    .img-scallops-roll { background-image: url('scallops-roll.jpg'); }
+    .img-seafood-combo-dinner { background-image: url('seafood-combo-dinner-shrimp-scallops-fish-clams-st.jpg'); }
+    .img-shanty-burger { background-image: url('shanty-burger-w-lettuce-tomato-cheese-topped-wfrie.jpg'); }
+    .img-shanty-chicken-swch { background-image: url('shanty-chicken-swch-w-lettuce-tomato-pickles.jpg'); }
+    .img-shanty-dog { background-image: url('shanty-dog-bacon-wrapped-hotdog-with-chili-nacho-c.jpg'); }
+    .img-shrimp-dinner { background-image: url('shrimp-dinner - -7-pcs.jpg'); }
+    .img-side-calamari { background-image: url('side-calamari.jpg'); }
+    .img-side-clam-fritter { background-image: url('side-clam-fritter - -3-pcs.jpg'); }
+    .img-side-clam-strips { background-image: url('side-clam-strips.jpg'); }
+    .img-side-coleslaw { background-image: url('side-coleslaw.jpg'); }
+    .img-side-salad { background-image: url('side-salad.jpg'); }
+    .img-side-scallops { background-image: url('side-scallops - -8-pcs.jpg'); }
+    .img-side-shrimp { background-image: url('side-shrimp - -7-pcs.jpg'); }
+    .img-steak-n-cheese-wrap { background-image: url('steak-n-cheese-wrap.jpg'); }
+    .img-tuna-salad-swch { background-image: url('tuna-salad-swch.jpg'); }
+    .img-tuna-salad-wrap { background-image: url('tuna-salad-wrap.jpg'); }
+    .img-turkey-burger { background-image: url('turkey-burger-w-lettuce-tomato-chipotle-mayo.jpg'); }
+    .img-turkey-wrap { background-image: url('turkey-wrap.jpg'); }
+    .img-veggie-burger { background-image: url('veggie-burger-lettuce-tomato.jpg'); }
+    .img-wings-dinner { background-image: url('wings-dinner - -7-pcs.jpg'); }
   </style>
 </head>
 <body>
@@ -321,7 +397,7 @@
         <div class="brand-name">EMPIRE PIZZA <span>kiosk</span></div>
       </div>
       <div class="kiosk-order-tag" onclick="alert('Your cart would open')">
-        <i class="fas fa-receipt"></i><span>CART</span><i class="fas fa-chevron-down"></i>
+        <i class="fas fa-receipt"></i><span>CART</span>
       </div>
     </div>
 
@@ -332,170 +408,74 @@
     </div>
 
     <!-- PIZZAS -->
-    <div class="section-title">🍕 PIZZAS <span style="font-size:1rem;">You may add any Toppings!</span></div>
+    <div class="section-title">🍕 PIZZAS <span>add any toppings</span></div>
     <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Cheese Pizza')">
+      <div class="item-card" onclick="addToCart('Cheese Pizza', 10.95)">
         <div class="item-img img-cheese-pizza"></div>
-        <div class="item-name">Cheese Pizza</div>
-        <div class="size-row"><span class="price-tag">Sml $10.95</span><span class="price-tag">Lrg $15.95</span><span class="price-tag">Party S. $24.95</span></div>
+        <div class="item-info"><div class="item-name">Cheese Pizza</div><div class="price-row"><span class="price-tag">Sml $10.95</span><span class="price-tag">Lrg $15.95</span><span class="price-tag">Party S. $24.95</span></div></div>
       </div>
     </div>
 
     <!-- GLUTEN FREE -->
-    <div class="section-title">🌾 GLUTEN FREE PIZZAS <span style="font-size:1rem;">add more toppings</span></div>
+    <div class="section-title">🌾 GLUTEN FREE <span>12" only</span></div>
     <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Gluten Free Cheese')">
+      <div class="item-card" onclick="addToCart('Gluten Free Cheese', 14.95)">
         <div class="item-img img-gluten-free-pizza"></div>
-        <div class="item-name">Gluten Free Cheese</div>
-        <div class="item-desc">12 Inch Only</div>
-        <div class="price-tag">$14.95</div>
+        <div class="item-info"><div class="item-name">Gluten Free Cheese</div><div class="price-tag">$14.95</div></div>
       </div>
     </div>
 
-    <!-- GOURMET PIZZAS -->
+    <!-- GOURMET PIZZAS (short list, all same price structure) -->
     <div class="section-title">🍕 GOURMET PIZZAS</div>
     <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Margherita')"><div class="item-img img-margherita-pizza"></div><div class="item-name">Margherita</div><div class="item-desc">Fresh mozzarella, tomatoes, garlic, basil</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Meat Lover')"><div class="item-img img-meat-lover-pizza"></div><div class="item-name">Meat Lover</div><div class="item-desc">Pepperoni, sausage, ham, bacon, hamburger</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Veggie Lover')"><div class="item-img img-veggie-lover-pizza"></div><div class="item-name">Veggie Lover</div><div class="item-desc">Onion, peppers, mushrooms, broccoli, tomato, olives</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('House Special')"><div class="item-img img-house-special-pizza"></div><div class="item-name">House Special</div><div class="item-desc">Pepperoni, sausage, onions, peppers, olives, mushrooms</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Philly Steak')"><div class="item-img img-philly-steak-pizza"></div><div class="item-name">Philly Steak</div><div class="item-desc">Red or White - Steak, onion, mushroom</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Hawaiian')"><div class="item-img img-hawaiian-pizza"></div><div class="item-name">Hawaiian</div><div class="item-desc">Ham, bacon, pineapple</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Pizza Bianco')"><div class="item-img img-pizza-bianco"></div><div class="item-name">Pizza Bianco</div><div class="item-desc">Ricotta, garlic, spinach</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Buffalo Chicken')"><div class="item-img img-buffalo-chicken-pizza"></div><div class="item-name">Buffalo Chicken</div><div class="item-desc">Chicken and house sauce</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('BBQ Chicken')"><div class="item-img img-b-b-q-chicken-pizza"></div><div class="item-name">B B Q Chicken</div><div class="item-desc">BBQ sauce and grilled chicken</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Chicken Alfredo')"><div class="item-img img-chicken-alfredo-pizza"></div><div class="item-name">Chicken Alfredo</div><div class="item-desc">Grilled chicken, alfredo sauce, bacon</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Bacon Chicken Ranch')"><div class="item-img img-bacon-chicken-ranch-pizza"></div><div class="item-name">Bacon Chicken Ranch</div><div class="item-desc">White pizza with chicken, bacon, ranch</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Clams Casino')"><div class="item-img img-clams-casino-pizza"></div><div class="item-name">Clams Casino</div><div class="item-desc">Bacon, roasted red pepper, onion, garlic, clams</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Shrimp Scampi')"><div class="item-img img-shrimp-scampi-pizza"></div><div class="item-name">Shrimp Scampi</div><div class="item-desc">Shrimp, garlic, basil, tomato</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Loaded Baked Potato')"><div class="item-img img-loaded-baked-potato-pizza"></div><div class="item-name">Loaded Baked Potato</div><div class="item-desc">Bacon, onion, ranch, potato, cheddar</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Taco Pizza')"><div class="item-img img-taco-pizza"></div><div class="item-name">Taco Pizza</div><div class="item-desc">Taco meat, sour cream, lettuce, tomato, jalapeños</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
-      <div class="item-card" onclick="addToCart('Pesto Grill Chicken')"><div class="item-img img-pesto-grill-chicken-pizza"></div><div class="item-name">Pesto Grill Chicken</div><div class="item-desc">Grill chicken, pesto, roasted peppers, garlic, ricotta</div><div class="size-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div>
+      <div class="item-card" onclick="addToCart('Margherita', 15.95)"><div class="item-img img-margherita-pizza"></div><div class="item-info"><div class="item-name">Margherita</div><div class="item-desc">Fresh mozzarella, tomatoes, garlic, basil</div><div class="price-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div></div>
+      <div class="item-card" onclick="addToCart('Meat Lover', 15.95)"><div class="item-img img-meat-lover-pizza"></div><div class="item-info"><div class="item-name">Meat Lover</div><div class="item-desc">Pepperoni, sausage, ham, bacon, hamburger</div><div class="price-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div></div>
+      <div class="item-card" onclick="addToCart('Veggie Lover', 15.95)"><div class="item-img img-veggie-lover-pizza"></div><div class="item-info"><div class="item-name">Veggie Lover</div><div class="item-desc">Onion, peppers, mushrooms, broccoli, tomato, olives</div><div class="price-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div></div>
+      <div class="item-card" onclick="addToCart('House Special', 15.95)"><div class="item-img img-house-special-pizza"></div><div class="item-info"><div class="item-name">House Special</div><div class="item-desc">Pepperoni, sausage, onions, peppers, olives, mushrooms</div><div class="price-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div></div>
+      <div class="item-card" onclick="addToCart('Philly Steak', 15.95)"><div class="item-img img-philly-steak-pizza"></div><div class="item-info"><div class="item-name">Philly Steak</div><div class="item-desc">Steak, onion, mushroom (red or white)</div><div class="price-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div></div>
+      <div class="item-card" onclick="addToCart('Hawaiian', 15.95)"><div class="item-img img-hawaiian-pizza"></div><div class="item-info"><div class="item-name">Hawaiian</div><div class="item-desc">Ham, bacon, pineapple</div><div class="price-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div></div>
+      <div class="item-card" onclick="addToCart('Pizza Bianco', 15.95)"><div class="item-img img-pizza-bianco"></div><div class="item-info"><div class="item-name">Pizza Bianco</div><div class="item-desc">Ricotta, garlic, spinach</div><div class="price-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div></div>
+      <div class="item-card" onclick="addToCart('Buffalo Chicken', 15.95)"><div class="item-img img-buffalo-chicken-pizza"></div><div class="item-info"><div class="item-name">Buffalo Chicken</div><div class="item-desc">Chicken and house sauce</div><div class="price-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div></div>
+      <div class="item-card" onclick="addToCart('BBQ Chicken', 15.95)"><div class="item-img img-b-b-q-chicken-pizza"></div><div class="item-info"><div class="item-name">BBQ Chicken</div><div class="item-desc">BBQ sauce, grilled chicken</div><div class="price-row"><span class="price-tag">Sml $15.95</span><span class="price-tag">Lrg $23.95</span><span class="price-tag">Party S. $31.95</span></div></div></div>
     </div>
 
     <!-- CALZONES / STROMBOLIS -->
-    <div class="section-title">🥟 CALZONES / STROMBOLIS <span>add fillings</span></div>
+    <div class="section-title">🥟 CALZONES / STROMBOLIS</div>
     <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Cheese Calzone')"><div class="item-img img-cheese-calzone"></div><div class="item-name">Cheese Calzone</div><div class="price-tag">$10.95</div></div>
-      <div class="item-card" onclick="addToCart('Cheese Stromboli')"><div class="item-img img-cheese-stromboli"></div><div class="item-name">Cheese Stromboli</div><div class="price-tag">$10.95</div></div>
+      <div class="item-card" onclick="addToCart('Cheese Calzone', 10.95)"><div class="item-img img-cheese-calzone"></div><div class="item-info"><div class="item-name">Cheese Calzone</div><div class="price-tag">$10.95</div></div></div>
+      <div class="item-card" onclick="addToCart('Cheese Stromboli', 10.95)"><div class="item-img img-cheese-stromboli"></div><div class="item-info"><div class="item-name">Cheese Stromboli</div><div class="price-tag">$10.95</div></div></div>
     </div>
 
     <!-- WINGS -->
-    <div class="section-title">🍗 WINGS <span>served w/ bleu cheese</span></div>
+    <div class="section-title">🍗 WINGS <span>w/ bleu cheese</span></div>
     <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('5 Wings')"><div class="item-img img-wings"></div><div class="item-name">5 Wings</div><div class="price-tag">$6.95</div></div>
-      <div class="item-card" onclick="addToCart('10 Wings')"><div class="item-img img-wings"></div><div class="item-name">10 Wings</div><div class="price-tag">$12.95</div></div>
-      <div class="item-card" onclick="addToCart('20 Wings')"><div class="item-img img-wings"></div><div class="item-name">20 Wings</div><div class="price-tag">$22.95</div></div>
-      <div class="item-card" onclick="addToCart('50 Wings')"><div class="item-img img-wings"></div><div class="item-name">50 Wings</div><div class="price-tag">$54.95</div></div>
+      <div class="item-card" onclick="addToCart('5 Wings', 6.95)"><div class="item-img img-wings"></div><div class="item-info"><div class="item-name">5 Wings</div><div class="price-tag">$6.95</div></div></div>
+      <div class="item-card" onclick="addToCart('10 Wings', 12.95)"><div class="item-img img-wings"></div><div class="item-info"><div class="item-name">10 Wings</div><div class="price-tag">$12.95</div></div></div>
+      <div class="item-card" onclick="addToCart('20 Wings', 22.95)"><div class="item-img img-wings"></div><div class="item-info"><div class="item-name">20 Wings</div><div class="price-tag">$22.95</div></div></div>
+      <div class="item-card" onclick="addToCart('50 Wings', 54.95)"><div class="item-img img-wings"></div><div class="item-info"><div class="item-name">50 Wings</div><div class="price-tag">$54.95</div></div></div>
     </div>
 
-    <!-- SANDWICHES / ROLLS -->
-    <div class="section-title">🥪 SANDWICHES / ROLLS</div>
+    <!-- SANDWICHES (selection) -->
+    <div class="section-title">🥪 SANDWICHES</div>
     <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Grilled Chicken Swch')"><div class="item-img img-sandwiches-rolls"></div><div class="item-name">Grilled Chicken</div><div class="price-tag">$4.95</div></div>
-      <div class="item-card" onclick="addToCart('Crispy Chicken')"><div class="item-img img-sandwiches-rolls"></div><div class="item-name">Crispy Chicken</div><div class="price-tag">$4.95</div></div>
-      <div class="item-card" onclick="addToCart('Shanty Chicken')"><div class="item-img img-sandwiches-rolls"></div><div class="item-name">Shanty Chicken</div><div class="item-desc">w/ lettuce, tomato, pickles</div><div class="price-tag">$5.95</div></div>
-      <div class="item-card" onclick="addToCart('Flounder Fish')"><div class="item-img img-sandwiches-rolls"></div><div class="item-name">Flounder Fish</div><div class="price-tag">$6.50</div></div>
-      <div class="item-card" onclick="addToCart('Tuna Salad')"><div class="item-img img-sandwiches-rolls"></div><div class="item-name">Tuna Salad</div><div class="price-tag">$5.50</div></div>
-      <div class="item-card" onclick="addToCart('Grilled Cheese')"><div class="item-img img-sandwiches-rolls"></div><div class="item-name">Grilled Cheese</div><div class="price-tag">$4.50</div></div>
-      <div class="item-card" onclick="addToCart('Scallops Roll')"><div class="item-img img-sandwiches-rolls"></div><div class="item-name">Scallops Roll</div><div class="price-tag">$12.95</div></div>
-      <div class="item-card" onclick="addToCart('Clam Strips Roll')"><div class="item-img img-sandwiches-rolls"></div><div class="item-name">Clam Strips Roll</div><div class="price-tag">$10.95</div></div>
+      <div class="item-card" onclick="addToCart('Grilled Chicken Swch', 4.95)"><div class="item-img img-grilled-chicken-swch"></div><div class="item-info"><div class="item-name">Grilled Chicken</div><div class="price-tag">$4.95</div></div></div>
+      <div class="item-card" onclick="addToCart('Crispy Chicken', 4.95)"><div class="item-img img-crispy-chicken-swch"></div><div class="item-info"><div class="item-name">Crispy Chicken</div><div class="price-tag">$4.95</div></div></div>
+      <div class="item-card" onclick="addToCart('Shanty Chicken', 5.95)"><div class="item-img img-shanty-chicken-swch"></div><div class="item-info"><div class="item-name">Shanty Chicken</div><div class="item-desc">w/ lettuce, tomato, pickles</div><div class="price-tag">$5.95</div></div></div>
     </div>
 
     <!-- BURGERS -->
     <div class="section-title">🍔 BURGERS</div>
     <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Hamburger')"><div class="item-img img-burgers"></div><div class="item-name">Hamburger</div><div class="price-tag">$3.95</div></div>
-      <div class="item-card" onclick="addToCart('Cheeseburger')"><div class="item-img img-burgers"></div><div class="item-name">Cheeseburger</div><div class="price-tag">$4.50</div></div>
-      <div class="item-card" onclick="addToCart('Shanty Burger')"><div class="item-img img-burgers"></div><div class="item-name">Shanty Burger</div><div class="item-desc">lettuce, tomato, cheese, fried pickles, ranch</div><div class="price-tag">$6.50</div></div>
-      <div class="item-card" onclick="addToCart('Turkey Burger')"><div class="item-img img-burgers"></div><div class="item-name">Turkey Burger</div><div class="price-tag">$6.50</div></div>
-      <div class="item-card" onclick="addToCart('Veggie Burger')"><div class="item-img img-burgers"></div><div class="item-name">Veggie Burger</div><div class="price-tag">$5.95</div></div>
+      <div class="item-card" onclick="addToCart('Hamburger', 3.95)"><div class="item-img img-burgers"></div><div class="item-info"><div class="item-name">Hamburger</div><div class="price-tag">$3.95</div></div></div>
+      <div class="item-card" onclick="addToCart('Cheeseburger', 4.50)"><div class="item-img img-cheeseburger"></div><div class="item-info"><div class="item-name">Cheeseburger</div><div class="price-tag">$4.50</div></div></div>
+      <div class="item-card" onclick="addToCart('Shanty Burger', 6.50)"><div class="item-img img-shanty-burger"></div><div class="item-info"><div class="item-name">Shanty Burger</div><div class="price-tag">$6.50</div></div></div>
     </div>
 
-    <!-- WRAPS (all $9.95) -->
-    <div class="section-title">🌯 WRAPS <span>w/ cheese, lettuce, tomato, mayo</span></div>
+    <!-- WRAPS (just a few) -->
+    <div class="section-title">🌯 WRAPS</div>
     <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Fish Wrap')"><div class="item-img img-wraps"></div><div class="item-name">Fish Wrap</div><div class="price-tag">$9.95</div></div>
-      <div class="item-card" onclick="addToCart('Ham Wrap')"><div class="item-img img-wraps"></div><div class="item-name">Ham Wrap</div><div class="price-tag">$9.95</div></div>
-      <div class="item-card" onclick="addToCart('Turkey Wrap')"><div class="item-img img-wraps"></div><div class="item-name">Turkey Wrap</div><div class="price-tag">$9.95</div></div>
-      <div class="item-card" onclick="addToCart('Italian Combo Wrap')"><div class="item-img img-wraps"></div><div class="item-name">Italian Combo</div><div class="price-tag">$9.95</div></div>
-      <div class="item-card" onclick="addToCart('Buffalo Chicken Wrap')"><div class="item-img img-wraps"></div><div class="item-name">Buffalo Chicken</div><div class="price-tag">$9.95</div></div>
-      <!-- additional wraps can be added, keeping layout simple -->
-    </div>
-
-    <!-- QUESADILLAS -->
-    <div class="section-title">🧀 QUESADILLAS <span>w/ sour cream & salsa</span></div>
-    <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Cheese Quesadilla')"><div class="item-img img-quesadillas"></div><div class="item-name">Cheese</div><div class="price-tag">$9.95</div></div>
-      <div class="item-card" onclick="addToCart('Grill Chicken Quesadilla')"><div class="item-img img-quesadillas"></div><div class="item-name">Grill Chicken</div><div class="price-tag">$11.95</div></div>
-      <div class="item-card" onclick="addToCart('Buffalo Chicken Quesadilla')"><div class="item-img img-quesadillas"></div><div class="item-name">Buffalo Chicken</div><div class="price-tag">$11.95</div></div>
-      <div class="item-card" onclick="addToCart('Steak Quesadilla')"><div class="item-img img-quesadillas"></div><div class="item-name">Steak</div><div class="price-tag">$12.95</div></div>
-    </div>
-
-    <!-- HOT DOGS -->
-    <div class="section-title">🌭 HOT DOGS</div>
-    <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Long Dog')"><div class="item-img img-hot-dogs"></div><div class="item-name">Long Dog</div><div class="price-tag">$3.50</div></div>
-      <div class="item-card" onclick="addToCart('Cheese Dog')"><div class="item-img img-hot-dogs"></div><div class="item-name">Cheese Dog</div><div class="price-tag">$3.95</div></div>
-      <div class="item-card" onclick="addToCart('Chili Dog')"><div class="item-img img-hot-dogs"></div><div class="item-name">Chili Dog</div><div class="price-tag">$4.50</div></div>
-      <div class="item-card" onclick="addToCart('Shanty Dog')"><div class="item-img img-hot-dogs"></div><div class="item-name">Shanty Dog</div><div class="item-desc">bacon wrapped, chili, nacho cheese</div><div class="price-tag">$4.95</div></div>
-    </div>
-
-    <!-- DINNERS -->
-    <div class="section-title">🍽️ DINNERS <span>w/ fries & coleslaw</span></div>
-    <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Scallop Dinner')"><div class="item-img img-dinner"></div><div class="item-name">Scallop</div><div class="price-tag">$18.95</div></div>
-      <div class="item-card" onclick="addToCart('Shrimp Dinner')"><div class="item-img img-dinner"></div><div class="item-name">Shrimp (7 pcs)</div><div class="price-tag">$16.95</div></div>
-      <div class="item-card" onclick="addToCart('Clam Strips Dinner')"><div class="item-img img-dinner"></div><div class="item-name">Clam Strips</div><div class="price-tag">$15.95</div></div>
-      <div class="item-card" onclick="addToCart('Calamari Dinner')"><div class="item-img img-dinner"></div><div class="item-name">Calamari</div><div class="price-tag">$15.95</div></div>
-      <div class="item-card" onclick="addToCart('Fish Dinner')"><div class="item-img img-dinner"></div><div class="item-name">Fish (3 pcs)</div><div class="price-tag">$14.95</div></div>
-      <div class="item-card" onclick="addToCart('Chicken Tenders Dinner')"><div class="item-img img-dinner"></div><div class="item-name">Chicken Tenders (4)</div><div class="price-tag">$13.95</div></div>
-      <div class="item-card" onclick="addToCart('Wings Dinner')"><div class="item-img img-dinner"></div><div class="item-name">Wings (7 pcs)</div><div class="price-tag">$13.95</div></div>
-      <div class="item-card" onclick="addToCart('Seafood Combo')"><div class="item-img img-dinner"></div><div class="item-name">Seafood Combo</div><div class="item-desc">shrimp, scallops, fish, clams</div><div class="price-tag">$19.95</div></div>
-    </div>
-
-    <!-- SALADS -->
-    <div class="section-title">🥗 SALADS</div>
-    <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Garden Salad')"><div class="item-img img-salad"></div><div class="item-name">Garden</div><div class="price-tag">$7.95</div></div>
-      <div class="item-card" onclick="addToCart('Garden w/ Tuna')"><div class="item-img img-salad"></div><div class="item-name">Garden w/ Tuna</div><div class="price-tag">$9.95</div></div>
-      <div class="item-card" onclick="addToCart('Caesar Salad')"><div class="item-img img-salad"></div><div class="item-name">Caesar</div><div class="price-tag">$7.95</div></div>
-      <div class="item-card" onclick="addToCart('Antipasto')"><div class="item-img img-salad"></div><div class="item-name">Antipasto</div><div class="price-tag">$9.95</div></div>
-      <div class="item-card" onclick="addToCart('Crispy Chicken Salad')"><div class="item-img img-salad"></div><div class="item-name">Crispy Chicken</div><div class="price-tag">$9.95</div></div>
-      <div class="item-card" onclick="addToCart('Grilled Chicken Salad')"><div class="item-img img-salad"></div><div class="item-name">Grilled Chicken</div><div class="price-tag">$10.95</div></div>
-      <div class="item-card" onclick="addToCart('Side Salad')"><div class="item-img img-salad"></div><div class="item-name">Side Salad</div><div class="price-tag">$5.95</div></div>
-    </div>
-
-    <!-- SIDES (using sides.jpg) -->
-    <div class="section-title">🍟 SIDE ORDERS <span>snacks & more</span></div>
-    <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('French Fries Sml')"><div class="item-img img-sides"></div><div class="item-name">Fries Sml</div><div class="price-tag">$2.95</div></div>
-      <div class="item-card" onclick="addToCart('French Fries Lrg')"><div class="item-img img-sides"></div><div class="item-name">Fries Lrg</div><div class="price-tag">$3.95</div></div>
-      <div class="item-card" onclick="addToCart('Chili Cheese Fries')"><div class="item-img img-sides"></div><div class="item-name">Chili Cheese Fries</div><div class="price-tag">$5.95</div></div>
-      <div class="item-card" onclick="addToCart('Onion Rings')"><div class="item-img img-sides"></div><div class="item-name">Onion Rings</div><div class="price-tag">$6.50</div></div>
-      <div class="item-card" onclick="addToCart('Mozzarella Sticks')"><div class="item-img img-sides"></div><div class="item-name">Mozzarella Sticks</div><div class="price-tag">$5.95</div></div>
-      <div class="item-card" onclick="addToCart('Garlic Knots')"><div class="item-img img-sides"></div><div class="item-name">Garlic Knots (2)</div><div class="price-tag">$2.95</div></div>
-    </div>
-
-    <!-- BEVERAGES -->
-    <div class="section-title">🥤 BEVERAGES</div>
-    <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Soda Sml')"><div class="item-img img-beverages"></div><div class="item-name">Soda Sml</div><div class="price-tag">$1.75</div></div>
-      <div class="item-card" onclick="addToCart('Soda Med')"><div class="item-img img-beverages"></div><div class="item-name">Soda Med</div><div class="price-tag">$2.50</div></div>
-      <div class="item-card" onclick="addToCart('Soda Lrg')"><div class="item-img img-beverages"></div><div class="item-name">Soda Lrg</div><div class="price-tag">$3.50</div></div>
-      <div class="item-card" onclick="addToCart('20oz Bottle')"><div class="item-img img-beverages"></div><div class="item-name">20oz Bottle</div><div class="price-tag">$2.50</div></div>
-      <div class="item-card" onclick="addToCart('2 Ltr Soda')"><div class="item-img img-beverages"></div><div class="item-name">2 Ltr Soda</div><div class="price-tag">$3.50</div></div>
-      <div class="item-card" onclick="addToCart('Dasani Water')"><div class="item-img img-beverages"></div><div class="item-name">Dasani Water</div><div class="price-tag">$1.95</div></div>
-    </div>
-
-    <!-- CATERING -->
-    <div class="section-title">📞 CATERING MENU <span>24hrs advance</span></div>
-    <div class="menu-grid">
-      <div class="item-card" onclick="addToCart('Salad Catering')"><div class="item-img img-catering"></div><div class="item-name">Salad (serves 10-12)</div><div class="price-tag">$50.00</div></div>
-      <div class="item-card" onclick="addToCart('Wings Catering')"><div class="item-img img-catering"></div><div class="item-name">Buffalo Wings</div><div class="price-tag">$100.00</div></div>
-      <div class="item-card" onclick="addToCart('Wraps Catering')"><div class="item-img img-catering"></div><div class="item-name">Wraps tray</div><div class="price-tag">$80.00</div></div>
-      <div class="item-card" onclick="addToCart('Baked Ziti')"><div class="item-img img-catering"></div><div class="item-name">Baked Ziti</div><div class="price-tag">$60.00</div></div>
-      <div class="item-card" onclick="addToCart('Sausage Peppers')"><div class="item-img img-catering"></div><div class="item-name">Sausage, Peppers, Onions</div><div class="price-tag">$70.00</div></div>
+      <div class="item-card" onclick="addToCart('Fish Wrap', 9.95)"><div class="item-img img-fish-wrap"></div><div class="item-info"><div class="item-name">Fish Wrap</div><div class="price-tag">$9.95</div></div></div>
+      <div class="item-card" onclick="addToCart('Buffalo Chicken Wrap', 9.95)"><div class="item-img img-buffalo-chicken-wrap"></div><div class="item-info"><div class="item-name">Buffalo Chicken Wrap</div><div class="price-tag">$9.95</div></div></div>
     </div>
 
     <!-- order bar with interactive cart -->
@@ -505,7 +485,7 @@
         <span class="total-value" id="cartDisplay">$0.00</span>
         <span style="color:#a48062;" id="cartCount">(0)</span>
       </div>
-      <button class="kiosk-cta" onclick="alert('Proceed to checkout with ' + cartItems.length + ' items')">
+      <button class="kiosk-cta" onclick="alert('Proceed to checkout with ' + cartItems.length + ' items\nTotal: $' + cartTotal.toFixed(2))">
         <i class="fas fa-arrow-right-to-bracket"></i> CHECKOUT
       </button>
     </div>
@@ -513,23 +493,10 @@
 </div>
 
 <script>
-  // simple cart system
   let cartItems = [];
   let cartTotal = 0;
 
-  function addToCart(name) {
-    // simulate a random price from the displayed ones – in reality you'd pass price.
-    // For demo we extract from the card.
-    let price = 0;
-    let card = event.currentTarget;
-    let priceElement = card.querySelector('.price-tag');
-    if (priceElement) {
-      let txt = priceElement.innerText;
-      let match = txt.match(/\d+\.\d{2}/);
-      if (match) price = parseFloat(match[0]);
-    }
-    if (price === 0) price = 9.99; // fallback
-
+  function addToCart(name, price) {
     cartItems.push({ name, price });
     cartTotal += price;
     updateCartDisplay();
@@ -540,7 +507,6 @@
     document.getElementById('cartCount').innerText = '(' + cartItems.length + ')';
   }
 
-  // make addToCart globally accessible for onclick
   window.addToCart = addToCart;
 </script>
 </body>
